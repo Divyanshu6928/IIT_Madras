@@ -1,19 +1,23 @@
 class Student:
     count = 0
-    def __init__(self,roll_no,name) :
+    def __init__(self,roll_no,name,total) :
         
         self.roll_no=roll_no
         self.name = name
+        self.total = total
     
     def display(self):
         print(self.roll_no,self.name)
 
-s0=Student(0,'Bhuvanesh')
-Student.count+=1
-s0.display()
+    def result(self):
+        if(self.total > 120):
+            print('Conratulations ',self.name ,"you are passed !!")
+        else:
+            print("Dear",self.name,"Please try again !!") 
 
-s1=Student(1,'Harish')
-Student.count+=1
-s1.display()
+s0=Student(0,'Bhuvanesh',100)
+s0.result()
 
-print(Student.count)
+s1=Student(1,'Harish',150)
+s1.result()
+
